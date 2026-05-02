@@ -1,12 +1,7 @@
 {
-  "routes": [
-    {
-      "src": "^/api/(.*)",
-      "dest": "/api/[...path].js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
+  "functions": {
+    "api/[...path].js": {
+      "runtime": "nodejs18.x"
     }
-  ]
+  }
 }
