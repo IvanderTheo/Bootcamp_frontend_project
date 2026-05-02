@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://38.47.180.195/student08/api';
+const API_BASE_URL = '/api/proxy';
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
