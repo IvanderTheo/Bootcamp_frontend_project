@@ -1,17 +1,14 @@
 export default async function handler(req, res) {
   const BASE_URL = "http://38.47.180.195/student08/api";
 
-  // ambil path setelah /api/proxy
-  const path = req.url.replace("/api/proxy", "");
-
-  const targetUrl = BASE_URL + path;
+  const path = req.query.path?.join("/") || "";
+  const targetUrl = `${BASE_URL}/${path}`;
 
   try {
     const response = await fetch(targetUrl, {
       method: req.method,
       headers: {
         "Content-Type": "application/json",
-        // forward token kalau ada
         Authorization: req.headers.authorization || "",
       },
       body:
